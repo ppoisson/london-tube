@@ -1,7 +1,7 @@
 ## The London Tube - Know Your Stops!
 How many Station stops does it take to get from any point of origin. Select your Station of origin and number of stops you choose to make.
 
-For example, if The Station was East Ham, and the number of stops you enter is 5, these would all be the potential stops available:
+For example, if The Station was East Ham, and the number of stops you enter is 5, these would be the stops available:
 * Bow Road
 * Dagenham East
 * East India
