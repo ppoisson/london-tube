@@ -1,0 +1,11 @@
+body {
+	background: #ffffff url("../images/tubebg.jpg") no-repeat fixed center;
+	background-size: cover;
+}
+#all_stops {
+	margin:20px 0;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+}
+.form-control {
+	margin-bottom:20px;
+}
