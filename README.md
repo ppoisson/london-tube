@@ -20,6 +20,3 @@ For example, if The Station was East Ham, and the number of stops you enter is 5
 * [London Tube Map](https://tfl.gov.uk/cdn/static/cms/images/tube-map.gif)
 
 Developed by Paul Poisson
-# The-London-Tube
-# The-London-Tube
-# The-London-Tube
