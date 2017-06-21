@@ -16,6 +16,13 @@ For example, if The Station was East Ham, and the number of stops you enter is 5
 * Stratford International
 * West Silvertown
 
+
+## Setup
+1. Clone or download this repository.
+2. Install [Node.js](https://nodejs.org/en/download/) and then run `npm install` on the project.
+3. Issue a start command `npm start` from the command line. `npm start` will open a browser run on localhost.
+
+
 ## Resources
 * [London Tube Map](https://tfl.gov.uk/cdn/static/cms/images/tube-map.gif)
 
