@@ -2,22 +2,17 @@ const london = {
 
   // configuration
 
+  csvData: 'data/London tube lines.csv',
   origin: 'Abbey Road',
   rawdata: '',
   stations: {},
   stops: 0,
   tube: function() {
 
-    const {
-      origin,
-      stations,
-      stops
-    } = london; // default origin, tree, initialize the stops
+    const { origin, stations, stops } = london; // default origin, tree, initialize the stops
 
-    let {
-      rawdata
-    } = london, // rawdata from csvToObject
-    routes = [], // store stations inbound and outbound
+    let { rawdata } = london, // rawdata from csvToObject
+      routes = [], // store stations inbound and outbound
       scheck = [], // store unique stations to compare to
       orderedStations = {} // sorted stations for select options
     ;
@@ -37,7 +32,7 @@ const london = {
 
       // loop through the array to create an object tree with array nodes, this makes accessing easier;
 
-      rawdata.forEach((station) => {
+      rawdata.forEach(station => {
 
         // start with the outbound stations
 
@@ -74,14 +69,19 @@ const london = {
       });
 
       // set property for later access
+      
       london.stations = stations;
 
-      Object.keys(stations).sort().forEach((key) => {
+      Object.keys(stations).sort().forEach(key => {
+
         orderedStations[key] = stations[key];
+
       });
 
-      for (var key in orderedStations) {
+      for (let key in orderedStations) {
+
         $('#select_origin').append(`<option>${key}</option>`);
+
       }
 
     }
@@ -123,7 +123,7 @@ const london = {
 
     this.diff = (a1, a2) => {
 
-      return a1.concat(a2).filter(function(val, index, arr) { // merge and filter the arrays
+      return a1.concat(a2).filter((val, index, arr) => { // merge and filter the arrays
 
         return arr.indexOf(val) === arr.lastIndexOf(val); // comapre and return
 
@@ -137,7 +137,7 @@ const london = {
 
       if (n < stops - 1) { // -1 to account for first route already set
 
-        routes.forEach((station) => {
+        routes.forEach(station => {
 
           route.push(stations[station]);
           scheck.push(station);
@@ -150,7 +150,7 @@ const london = {
 
         // increment
 
-        n = n + 1;
+        n++;
 
         // recurse
 
@@ -175,16 +175,16 @@ const london = {
           $("#all_stops")
             .append(
               `<a
-            href="https://www.doogal.co.uk/StationMap.php?station=${station}"
-            class="list-group-item" target="_blank"
-            data-toggle="tooltip"
-            data-placement="top"
-            data-delay="300"
-            title="Open Map"
-            >
-            ${station}
-            <span class="pull-right glyphicon glyphicon-chevron-right"></span>
-            </a>`
+                href="https://www.doogal.co.uk/StationMap.php?station=${station}"
+                class="list-group-item" target="_blank"
+                data-toggle="tooltip"
+                data-placement="top"
+                data-delay="300"
+                title="Open Map"
+              >
+              ${station}
+              <span class="pull-right glyphicon glyphicon-chevron-right"></span>
+              </a>`
             );
 
         });
@@ -211,11 +211,11 @@ $(document).ready(function() {
 
     type: "GET",
 
-    url: "https://raw.githubusercontent.com/ppoisson/london-tube/master/src/data/London%20tube%20lines.csv", // csv file
+    url: london.csvData,
 
     dataType: "text",
 
-    success: function(data) {
+    success: data => {
 
       london.rawdata = $.csv.toObjects(data); // jquery.csv.min.js
 
@@ -239,7 +239,7 @@ processInput = event => {
 
   // gives user time to enter larger integers before firing
 
-  setTimeout(function() {
+  setTimeout(() => {
 
     event.target.select();
 
