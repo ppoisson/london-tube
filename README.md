@@ -16,6 +16,9 @@ For example, if The Station was East Ham, and the number of stops you enter is 5
 * Stratford International
 * West Silvertown
 
+##Demo
+* https://jsfiddle.net/xnep6179/
+
 
 ## Setup
 1. Clone or download this repository.
